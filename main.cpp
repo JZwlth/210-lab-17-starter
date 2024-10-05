@@ -144,3 +144,47 @@ Node* addToTail(Node* head, float value) {
         return head;
     }
 }
+
+Node* deleteNode(Node* head, int position) {
+    if (!head) return nullptr;
+
+    if (position == 1) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+    else {
+        Node* current = head;
+        Node* prev = nullptr;
+        int count = 1;
+        while (current && count < position) {
+            prev = current;
+            current = current->next;
+            count++;
+        }
+        if (current) {
+            prev->next = current->next;
+            delete current;
+        }
+        return head;
+    }
+}
+
+Node* insertNode(Node* head, int position, float value) {
+    Node* newNode = new Node;
+    newNode->value = value;
+
+    if (position == 1) {
+        newNode->next = head;
+        return newNode;
+    }
+    else {
+        Node* current = head;
+        Node* prev = nullptr;
+        int count = 1;
+        while (current && count < position) {
+            prev = current;
+            current = current->next;
+            count++;
+        }
