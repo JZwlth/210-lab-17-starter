@@ -188,3 +188,18 @@ Node* insertNode(Node* head, int position, float value) {
             current = current->next;
             count++;
         }
+        prev->next = newNode;
+        newNode->next = current;
+        return head;
+    }
+}
+
+void deleteLinkedList(Node*& head) {
+    Node* current = head;
+    while (current) {
+        Node* temp = current;
+        current = current->next;
+        delete temp;
+    }
+    head = nullptr;
+}
