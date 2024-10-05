@@ -1,3 +1,4 @@
+// COMSC-210 | Lab 17 | Zhaoyi Zheng
 #include <iostream>
 using namespace std;
 
@@ -8,6 +9,7 @@ struct Node {
     Node *next;
 };
 
+// Function prototypes
 void output(Node *);
 
 int main() {
