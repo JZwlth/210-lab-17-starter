@@ -120,3 +120,27 @@ void output(Node * hd) {
     cout << endl;
 }
 
+// Function implementations
+Node* addToFront(Node* head, float value) {
+    Node* newNode = new Node;
+    newNode->value = value;
+    newNode->next = head;
+    return newNode;
+}
+
+Node* addToTail(Node* head, float value) {
+    Node* newNode = new Node;
+    newNode->value = value;
+    newNode->next = nullptr;
+
+    if (!head) {
+        return newNode;
+    }
+    else {
+        Node* current = head;
+        while (current->next)
+            current = current->next;
+        current->next = newNode;
+        return head;
+    }
+}
