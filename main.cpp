@@ -11,7 +11,11 @@ struct Node {
 
 // Function prototypes
 void output(Node *);
-Node* addNodeToFront(Node *head, float value);
+Node* addToFront(Node* head, float value);
+Node* addToTail(Node* head, float value);
+Node* deleteNode(Node* head, int position);
+Node* insertNode(Node* head, int position, float value);
+void deleteLinkedList(Node*& head);
 
 int main() {
     Node *head = nullptr;
@@ -115,3 +119,4 @@ void output(Node * hd) {
     }
     cout << endl;
 }
+
