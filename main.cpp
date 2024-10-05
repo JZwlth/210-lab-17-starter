@@ -11,6 +11,7 @@ struct Node {
 
 // Function prototypes
 void output(Node *);
+Node* addNodeToFront(Node *head, float value);
 
 int main() {
     Node *head = nullptr;
